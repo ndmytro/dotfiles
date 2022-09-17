@@ -1,0 +1,31 @@
+[alias]
+    authors = shortlog -sne
+    branches = branch -vv
+    history = log --graph --decorate --oneline
+    uncommit = reset --soft HEAD^
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+    cleanup = remote prune origin
+
+[color]
+    ui = true
+
+[diff]
+    noprefix = true
+    relative = true
+    suppressBlankEmpty = true
+    algorithm = minimal
+
+[difftool]
+    prompt = true
+
+[grep]
+    lineNumber = true
+
+[init]
+    defaultBranch = master
+
+[pull]
+    ff = only
+
+[user]
+    name = Dmytro Nykonenko
