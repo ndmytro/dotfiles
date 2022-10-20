@@ -29,3 +29,9 @@
 
 [user]
     name = Dmytro Nykonenko
+
+[pager]
+    branch = false
+
+[core]
+    autocrlf = false
