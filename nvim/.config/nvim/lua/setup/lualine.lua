@@ -135,7 +135,7 @@ local function getWords()
           },
       },
       -- lualine_x = { { "filetype", icon_only = true } },
-      lualine_y = { { require("auto-session-library").current_session_name } },
+      lualine_y = { { require("auto-session.lib").current_session_name } },
       lualine_z = {
         { place, padding = { left = 1, right = 1 } },
       },
@@ -160,8 +160,8 @@ local function getWords()
           path = 1,
           shorting_target = 40,
           symbols = {
-            modified = "落", -- Text to show when the file is modified.
-            readonly = "", -- Text to show when the file is non-modifiable or readonly.
+            modified = "[Modified]", -- Text to show when the file is modified.
+            readonly = "[Readonly]", -- Text to show when the file is non-modifiable or readonly.
             unnamed = "[No Name]", -- Text to show for unnamed buffers.
             newfile = "[New]", -- Text to show for new created file before first writting
           },

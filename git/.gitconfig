@@ -28,7 +28,8 @@
     ff = only
 
 [user]
-    name = Dmytro Nykonenko
+	name = Dmytro Nykonenko
+	email = dnykonenko@healthjoy.com
 
 [pager]
     branch = false

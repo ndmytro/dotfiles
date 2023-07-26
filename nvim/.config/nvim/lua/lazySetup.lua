@@ -8,7 +8,8 @@ end
 
 return {
   -- { "sainnhe/everforest", config = get_setup("everforest") },
-  { "folke/tokyonight.nvim", config = get_setup("tokyonight") },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000, config=get_setup("catppuccin") },
+--  { "folke/tokyonight.nvim", config = get_setup("tokyonight") },
   { "lukas-reineke/indent-blankline.nvim" },
 --  { "nvim-tree/nvim-web-devicons", config = get_setup("nvim-web-devicons") },
 --  { "nvim-tree/nvim-tree.lua", config = get_setup("nvim-tree") },
@@ -62,5 +63,10 @@ return {
     event = "VeryLazy",
   },
   { "kdheepak/lazygit.nvim" },
-  { "rmagatti/auto-session" }
+  { "rmagatti/auto-session", config = get_setup("autosession") },
+  { "f-person/git-blame.nvim" },
+  { "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" }, 
+    config=get_setup("trouble") 
+  }
 }

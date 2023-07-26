@@ -99,6 +99,8 @@ km.set("n", "<leader>gs", function()
   require("telescope.builtin").git_status()
 end, { desc = "Git Status" })
 
+km.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Git Blame Toggle" })
+
 km.set("n", "<leader>ca", function()
   vim.lsp.buf.code_action()
 end, { desc = "Code Actions" })
@@ -118,6 +120,10 @@ end, { desc = "Code Diagnostics" })
 km.set("n", "<leader>cr", function()
   require("telescope.builtin").lsp_references()
 end, { desc = "Code References" })
+
+km.set("n", "<leader>ct", function()
+    require("trouble").toggle("document_diagnostics")
+end, { desc = "Code Diagnostics with Trouble" })
 
 km.set({ "v", "n" }, "<leader>cn", function()
   vim.lsp.buf.rename()
