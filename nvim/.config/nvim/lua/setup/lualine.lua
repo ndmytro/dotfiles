@@ -116,22 +116,20 @@ local function getWords()
         },
       },
       lualine_x = { 
+          "filetype",
           {
-              "filetype",
-              {
-                  "fileformat",
-                  icons_enabled = false,
-              },
-              {
-                  "encoding",
-                  cond = function()
-                      -- UTF-8 is the de-facto standard encoding and is what
-                      -- most users expect by default. There's no need to
-                      -- show encoding unless it's something else.
-                      local fenc = vim.opt.fenc:get()
-                      return string.len(fenc) > 0 and string.lower(fenc) ~= "utf-8"
-                  end,
-              },
+              "fileformat"
+              -- icons_enabled = false,
+          },
+          {
+              "encoding",
+              cond = function()
+                  -- UTF-8 is the de-facto standard encoding and is what
+                  -- most users expect by default. There's no need to
+                  -- show encoding unless it's something else.
+                  local fenc = vim.opt.fenc:get()
+                  return string.len(fenc) > 0 and string.lower(fenc) ~= "utf-8"
+              end,
           },
       },
       -- lualine_x = { { "filetype", icon_only = true } },
