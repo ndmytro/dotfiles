@@ -100,7 +100,7 @@ local function getWords()
           path = 0,
           shorting_target = 40,
           symbols = {
-            modified = "落", -- Text to show when the file is modified.
+            modified = "[Modified]", -- Text to show when the file is modified.
             readonly = "", -- Text to show when the file is non-modifiable or readonly.
             unnamed = "[No Name]", -- Text to show for unnamed buffers.
             newfile = "[New]", -- Text to show for new created file before first writting
