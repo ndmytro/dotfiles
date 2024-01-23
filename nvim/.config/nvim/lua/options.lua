@@ -46,7 +46,7 @@ opt.title = true -- Allows neovom to send the Terminal details of the current wi
 vim.g.markdown_fenced_languages = { "html", "javascript", "typescript", "css", "scss", "lua", "vim" }
 vim.o.whichwrap = vim.o.whichwrap .. "<,>" -- Wrap movement between lines in edit mode with arrows
 opt.wrap = false
-opt.cc = "80,100"
+opt.cc = "80,100,120"
 opt.mouse = "a"
 opt.guicursor =
   "n-v-c-sm:block-blinkwait50-blinkon50-blinkoff50,i-ci-ve:ver25-Cursor-blinkon100-blinkoff100,r-cr-o:hor20"
@@ -88,15 +88,15 @@ api.nvim_create_autocmd(
 )
 
 -- show Blank Line only in active window
-local blanklineGrp = api.nvim_create_augroup("BlankLine", { clear = true })
-api.nvim_create_autocmd(
-  { "InsertLeave", "WinEnter" },
-  { pattern = "*", command = ":IndentBlanklineEnable", group = blanklineGrp }
-)
-api.nvim_create_autocmd(
-  { "InsertEnter", "WinLeave" },
-  { pattern = "*", command = ":IndentBlanklineDisable", group = blanklineGrp }
-)
+-- local blanklineGrp = api.nvim_create_augroup("BlankLine", { clear = true })
+-- api.nvim_create_autocmd(
+--   { "InsertLeave", "WinEnter" },
+--   { pattern = "*", command = ":IndentBlanklineEnable", group = blanklineGrp }
+-- )
+-- api.nvim_create_autocmd(
+--   { "InsertEnter", "WinLeave" },
+--   { pattern = "*", command = ":IndentBlanklineDisable", group = blanklineGrp }
+-- )
 
 -- auto-reload files when modified externally
 -- https://unix.stackexchange.com/a/383044

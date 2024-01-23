@@ -118,7 +118,7 @@ local function getWords()
       lualine_x = { 
           "filetype",
           {
-              "fileformat"
+              "fileformat",
               -- icons_enabled = false,
           },
           {

@@ -25,6 +25,9 @@ end
 
 require("telescope").setup({
   defaults = {
+    layout_config = {
+        horizontal = { height = 0.8 },
+    },
     sorting_strategy = "descending",
     prompt_prefix = "  ",
     winblend = 25,

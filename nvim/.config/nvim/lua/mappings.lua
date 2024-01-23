@@ -36,7 +36,7 @@ km.set("n", "<esc>", function()
   vim.cmd(":noh")
 end, { silent = true, desc = "Remove Search Highlighting, Dismiss Popups" })
 
-km.set("n", "<leader>l", ":LazyGit<cr>", { silent = true, desc = "Lazygit" })
+--km.set("n", "<leader>l", ":LazyGit<cr>", { silent = true, desc = "Lazygit" })
 
 -- Easy add date/time
 function date()
@@ -119,6 +119,7 @@ end, { desc = "Code Diagnostics" })
 
 km.set("n", "<leader>cr", function()
   require("telescope.builtin").lsp_references()
+  -- require("telescope.builtin").lsp_references(require("telescope.themes").get_dropdown({path_display = { truncate = 5 }, layout_config={width=0.8, height=0.8}}))
 end, { desc = "Code References" })
 
 km.set("n", "<leader>ct", function()
@@ -133,7 +134,10 @@ km.set("n", "<Leader><Down>", "<C-W><C-J>", { silent = true, desc = "Window Down
 km.set("n", "<Leader><Up>", "<C-W><C-K>", { silent = true, desc = "Window Up" })
 km.set("n", "<Leader><Right>", "<C-W><C-L>", { silent = true, desc = "Window Right" })
 km.set("n", "<Leader><Left>", "<C-W><C-H>", { silent = true, desc = "Window Left" })
-km.set("n", "<Leader>wr", "<C-W>R", { silent = true, desc = "Window Resize" })
+km.set("n", "<Leader>wr", "<C-W>R", { silent = true, desc = "Window Swap" })
+km.set("n", "<Leader>w<", "<C-W>10<", {silent = true, desc = "Window Vertical Size Decrease" })
+km.set("n", "<Leader>w>", "<C-W>10>", {silent = true, desc = "Window Vertical Size Increase" })
+-- "<C-W>10+" should be just fine to increase height of a vertical split
 km.set("n", "<Leader>=", "<C-W>=", { silent = true, desc = "Window Equalise" })
 
 -- Easier window switching with leader + Number

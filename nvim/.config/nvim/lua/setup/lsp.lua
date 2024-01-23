@@ -144,9 +144,12 @@ require("lspconfig").pyright.setup({
          vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {
              noremap=true, silent=true, buffer=bufnr, desc = 'Go to declaration'
          })
-         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {
-             noremap=true, silent=true, buffer=bufnr, desc = 'Go to definition'
-         })
+         vim.keymap.set('n', 'gd', function()
+             require('telescope.builtin').lsp_definitions()
+         end, { noremap=true, silent=true, buffer=bufnr, desc = 'Go to definition' })
+         --vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {
+         --    noremap=true, silent=true, buffer=bufnr, desc = 'Go to definition'
+         --})
          vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
          vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
          vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
@@ -168,12 +171,24 @@ require("lspconfig").pyright.setup({
     end,
   })
 
+require("lspconfig").gopls.setup({
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
+})
+
 -- LSP Prevents inline buffer annotations
 vim.diagnostic.open_float()
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   virtual_text = false,
   signs = true,
-  underline = true,
+  underline = false,
   update_on_insert = false,
 })
 
